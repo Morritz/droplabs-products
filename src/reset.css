@@ -1,0 +1,131 @@
+/* reset.css - Minimal modern reset for droplabs-products */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default spacing */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+pre,
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+/* Root defaults */
+html,
+body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Body sensible defaults */
+body {
+    line-height: 1.5;
+    color: inherit;
+    background: transparent;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* Lists */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Form elements inherit font and reset margin */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    margin: 0;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: inherit;
+}
+
+/* Buttons use pointer cursor by default */
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Keep focus outlines for accessibility */
+:focus {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+}
+
+/* Hidden attribute */
+[hidden] {
+    display: none !important;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
