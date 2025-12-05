@@ -5,7 +5,7 @@ export default function AppBar() {
     return (
         <AppBarMUI position="static">
             <Toolbar>
-                <Box sx={{ flexGrow: 1 }}>
+                <Box>
                     <AppBarButton title="Home" path="/" />
                     <AppBarButton title="Products" path="/products" />
                 </Box>
