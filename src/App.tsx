@@ -4,12 +4,14 @@ import ProductsPage from "./pages/ProductsPage"
 import NotFoundPage from "./pages/NotFoundPage"
 import AppBar from "./components/AppBar"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { CssBaseline } from "@mui/material"
 
 const queryClient = new QueryClient()
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <CssBaseline />
       <BrowserRouter>
         <AppBar />
         <Routes>
