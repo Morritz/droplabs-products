@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
 import {
     Container,
     CircularProgress,
@@ -6,16 +5,13 @@ import {
     Button,
     Typography,
 } from '@mui/material';
-import { getAllProducts } from '../api';
 import { ProductCard } from '../components/ProductCard';
 import { useNavigate } from 'react-router';
+import { useGetAllProductsQuery } from '../hooks/useGetAllProductsQuery';
 
 export function ProductsPage() {
     const navigate = useNavigate();
-    const { data, isLoading, error } = useQuery({
-        queryKey: ['products'],
-        queryFn: getAllProducts
-    });
+    const { data, isLoading, error } = useGetAllProductsQuery();
 
 
     if (isLoading)
