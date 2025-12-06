@@ -26,8 +26,8 @@ export function ProductCard({ product }: ProductCardProps) {
                     <Typography variant="body2">
                         <strong>Kategoria:</strong> {product.category}
                     </Typography>
-                    <Rating value={product.rating?.rate || 0} readOnly size="small" />
-                    <Typography variant="body2">({product.rating?.count || 0})</Typography>
+                    <Rating value={product.rating.rate} readOnly size="small" />
+                    <Typography variant="body2">({product.rating.count})</Typography>
                 </Box>
                 <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
                     ${product.price}
