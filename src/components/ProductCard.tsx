@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography, Box, Rating } from "@mui/material";
 import type { Product } from "../api";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
@@ -19,8 +19,18 @@ export function ProductCard({ product }: ProductCardProps) {
                 <Typography gutterBottom variant="h5" component="div">
                     {product.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>
                     {product.description}
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 2, mb: 1, alignItems: 'center' }}>
+                    <Typography variant="body2">
+                        <strong>Kategoria:</strong> {product.category}
+                    </Typography>
+                    <Rating value={product.rating?.rate || 0} readOnly size="small" />
+                    <Typography variant="body2">({product.rating?.count || 0})</Typography>
+                </Box>
+                <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
+                    ${product.price}
                 </Typography>
             </CardContent>
             <CardActions>
