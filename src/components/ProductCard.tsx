@@ -1,12 +1,14 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography, Box, Rating } from "@mui/material";
 import type { Product } from "../api";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { useCart } from "../store";
 
 interface ProductCardProps {
     product: Product;
 };
 
 export function ProductCard({ product }: ProductCardProps) {
+    const addCart = useCart((state) => state.addCart);
     return (
         <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, width: '100%', alignItems: { xs: "center", sm: "normal" } }}>
             <CardMedia
@@ -34,7 +36,13 @@ export function ProductCard({ product }: ProductCardProps) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button><AddShoppingCartIcon /></Button>
+                <Button onClick={() =>
+                    addCart({
+                        ...product,
+                        price: product.price,
+                        quantity: 1,
+                    })
+                }><AddShoppingCartIcon /></Button>
             </CardActions>
         </Card>
     );
