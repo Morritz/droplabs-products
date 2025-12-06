@@ -1,21 +1,17 @@
 import {
     Container,
-    CircularProgress,
     Box,
 } from '@mui/material';
 import { ProductCard } from '../components/ProductCard';
 import { useGetAllProductsQuery } from '../hooks/useGetAllProductsQuery';
 import { ProductsLoadingError } from '../components/ProductsLoadingError';
+import { CircularLoadingProgress } from '../components/CircularLoadingProgress';
 
 export function ProductsPage() {
     const { data, isLoading, error } = useGetAllProductsQuery();
 
     if (isLoading)
-        return (
-            <Box display="flex" justifyContent="center" alignItems="center" height="60vh">
-                <CircularProgress />
-            </Box>
-        );
+        return <CircularLoadingProgress />
 
     if (error || !data) return (
         <ProductsLoadingError />
