@@ -29,6 +29,9 @@ dependencies:
   react-router:
     specifier: ^7.10.1
     version: 7.10.1(react-dom@19.2.1)(react@19.2.1)
+  zod:
+    specifier: ^4.1.13
+    version: 4.1.13
   zustand:
     specifier: ^5.0.9
     version: 5.0.9(@types/react@19.2.7)(react@19.2.1)
@@ -2351,7 +2354,6 @@ packages:
 
   /zod@4.1.13:
     resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
-    dev: true
 
   /zustand@5.0.9(@types/react@19.2.7)(react@19.2.1):
     resolution: {integrity: sha512-ALBtUj0AfjJt3uNRQoL1tL2tMvj6Gp/6e39dnfT6uzpelGru8v1tPOGBzayOWbPJvujM8JojDk3E1LxeFisBNg==}
