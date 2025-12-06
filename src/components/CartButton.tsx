@@ -3,7 +3,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from "../store";
 
 export function CartButton() {
-    const { count } = useCart();
+    const count = useCart((state) => state.count);
 
     return <IconButton
         size="large"
