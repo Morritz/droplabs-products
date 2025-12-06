@@ -1,12 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import type { Product } from './api';
 
-type CartItem = {
-    id: number;
-    title: string;
-    price: number;
-    quantity: number;
-};
+export type CartItem = Product & { quantity: number };
 
 type CartState = {
     count: number;
