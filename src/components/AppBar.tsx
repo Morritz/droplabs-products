@@ -1,7 +1,7 @@
 import { AppBar as AppBarMUI, Toolbar, Box } from '@mui/material';
 import { AppBarButton } from './AppBarButton';
 
-export default function AppBar() {
+export function AppBar() {
     return (
         <AppBarMUI position="static">
             <Toolbar>

@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router"
-import HomePage from "./pages/HomePage"
-import ProductsPage from "./pages/ProductsPage"
-import NotFoundPage from "./pages/NotFoundPage"
-import AppBar from "./components/AppBar"
+import { HomePage } from "./pages/HomePage"
+import { ProductsPage } from "./pages/ProductsPage"
+import { NotFoundPage } from "./pages/NotFoundPage"
+import { AppBar } from "./components/AppBar"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { CssBaseline } from "@mui/material"
 
