@@ -3,7 +3,7 @@ import { AppBarButton } from './AppBarButton';
 
 export function AppBar() {
     return (
-        <AppBarMUI position="static">
+        <AppBarMUI position="sticky">
             <Toolbar>
                 <Box>
                     <AppBarButton title="Home" path="/" />
