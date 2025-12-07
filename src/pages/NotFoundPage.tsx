@@ -21,9 +21,6 @@ export function NotFoundPage() {
                 <Typography variant="h4" component="h2" gutterBottom>
                     Strona nie znaleziona
                 </Typography>
-                <Typography variant="body1" color="text.secondary" mb={2}>
-                    Przepraszamy, szukana strona nie istnieje.
-                </Typography>
                 <Button
                     variant="contained"
                     color="primary"
