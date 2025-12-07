@@ -8,8 +8,8 @@ export function AppBar() {
             <Toolbar>
                 <Box display={"flex"} justifyContent={"space-between"} width={"100%"} alignItems={"center"}>
                     <Box>
-                        <AppBarButton title="Home" path="/" />
-                        <AppBarButton title="Products" path="/products" />
+                        <AppBarButton title="Strona główna" path="/" />
+                        <AppBarButton title="Produkty" path="/products" />
                     </Box>
                     <Box>
                         <CartButton />

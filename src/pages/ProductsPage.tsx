@@ -32,21 +32,21 @@ export function ProductsPage() {
                         onClick={() => sortBy('default')}
                         color={sortField === 'default' ? 'primary' : 'inherit'}
                     >
-                        Default
+                        Domyślnie
                     </Button>
                     <Button
                         onClick={() => sortBy('title')}
                         color={sortField === 'title' ? 'primary' : 'inherit'}
                         endIcon={sortField === 'title' && (sortOrder === 'asc' ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />)}
                     >
-                        Title
+                        Tytuł
                     </Button>
                     <Button
                         onClick={() => sortBy('price')}
                         color={sortField === 'price' ? 'primary' : 'inherit'}
                         endIcon={sortField === 'price' && (sortOrder === 'asc' ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />)}
                     >
-                        Price
+                        Cena
                     </Button>
                 </ButtonGroup>
             </Box>
