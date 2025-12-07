@@ -16,7 +16,6 @@ export function ProductCard({ product }: ProductCardProps) {
             cardActions={<Button onClick={() =>
                 addCart({
                     ...product,
-                    price: product.price,
                     quantity: 1,
                 })
             }><AddShoppingCartIcon /></Button>} />
