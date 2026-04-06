@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^9.39.1
     version: 9.39.1
   '@types/node':
-    specifier: ^24.10.1
-    version: 24.10.1
+    specifier: ^25.5.2
+    version: 25.5.2
   '@types/react':
     specifier: ^19.2.5
     version: 19.2.7
@@ -84,7 +84,7 @@ devDependencies:
     version: 8.48.1(eslint@9.39.1)(typescript@5.9.3)
   vite:
     specifier: ^7.2.4
-    version: 7.2.6(@types/node@24.10.1)
+    version: 7.2.6(@types/node@25.5.2)
 
 packages:
 
@@ -1141,10 +1141,10 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
-  /@types/node@24.10.1:
-    resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
+  /@types/node@25.5.2:
+    resolution: {integrity: sha512-tO4ZIRKNC+MDWV4qKVZe3Ql/woTnmHDr5JD8UI5hn2pwBrHEwOEMZK7WlNb5RKB6EoJ02gwmQS9OrjuFnZYdpg==}
     dependencies:
-      undici-types: 7.16.0
+      undici-types: 7.18.2
     dev: true
 
   /@types/parse-json@4.0.2:
@@ -1329,7 +1329,7 @@ packages:
       '@rolldown/pluginutils': 1.0.0-beta.47
       '@types/babel__core': 7.20.5
       react-refresh: 0.18.0
-      vite: 7.2.6(@types/node@24.10.1)
+      vite: 7.2.6(@types/node@25.5.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2331,8 +2331,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  /undici-types@7.16.0:
-    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+  /undici-types@7.18.2:
+    resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
     dev: true
 
   /update-browserslist-db@1.2.2(browserslist@4.28.1):
@@ -2363,7 +2363,7 @@ packages:
       typescript: 5.9.3
     dev: false
 
-  /vite@7.2.6(@types/node@24.10.1):
+  /vite@7.2.6(@types/node@25.5.2):
     resolution: {integrity: sha512-tI2l/nFHC5rLh7+5+o7QjKjSR04ivXDF4jcgV0f/bTQ+OJiITy5S6gaynVsEM+7RqzufMnVbIon6Sr5x1SDYaQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
@@ -2403,7 +2403,7 @@ packages:
       yaml:
         optional: true
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.5.2
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
