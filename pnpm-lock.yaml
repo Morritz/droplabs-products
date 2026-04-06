@@ -33,8 +33,8 @@ dependencies:
     specifier: ^7.14.0
     version: 7.14.0(react-dom@19.2.1)(react@19.2.1)
   valibot:
-    specifier: ^1.2.0
-    version: 1.2.0(typescript@5.9.3)
+    specifier: ^1.3.1
+    version: 1.3.1(typescript@5.9.3)
   zustand:
     specifier: ^5.0.9
     version: 5.0.9(@types/react@19.2.7)(react@19.2.1)
@@ -2352,8 +2352,8 @@ packages:
       punycode: 2.3.1
     dev: true
 
-  /valibot@1.2.0(typescript@5.9.3):
-    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
+  /valibot@1.3.1(typescript@5.9.3):
+    resolution: {integrity: sha512-sfdRir/QFM0JaF22hqTroPc5xy4DimuGQVKFrzF1YfGwaS1nJot3Y8VqMdLO2Lg27fMzat2yD3pY5PbAYO39Gg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
