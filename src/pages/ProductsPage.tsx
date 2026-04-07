@@ -1,6 +1,5 @@
 import { Container, Box, ButtonGroup, Button } from "@mui/material";
 import { ProductCard } from "../components/ProductCard";
-import { RainbowBorder } from "../components/RainbowBorder";
 import { useGetAllProductsQuery } from "../hooks/useGetAllProductsQuery";
 import { ProductsLoadingError } from "../components/ProductsLoadingError";
 import { ProductsEmptyList } from "../components/ProductsEmptyList";
@@ -9,7 +8,6 @@ import { useSortProducts } from "../hooks/useSortProducts";
 import { useLanguage } from "../i18n";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import { useMemo } from "react";
 
 export function ProductsPage() {
   const { data, isLoading, error } = useGetAllProductsQuery();
@@ -17,11 +15,6 @@ export function ProductsPage() {
 
   const { sortedProducts, sortField, sortOrder, sortBy } =
     useSortProducts(data);
-
-  const randomIndex = useMemo(() => {
-    if (!sortedProducts.length) return -1;
-    return Math.floor(Math.random() * sortedProducts.length);
-  }, [sortedProducts.length]);
 
   if (isLoading) return <CircularLoadingProgress />;
 
@@ -72,15 +65,9 @@ export function ProductsPage() {
         </ButtonGroup>
       </Box>
       <Box padding={4} gap={4} display={"flex"} flexDirection={"column"}>
-        {sortedProducts.map((product, index) =>
-          index === randomIndex ? (
-            <RainbowBorder key={product.id}>
-              <ProductCard product={product} />
-            </RainbowBorder>
-          ) : (
-            <ProductCard key={product.id} product={product} />
-          ),
-        )}
+        {sortedProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </Box>
     </Container>
   );
