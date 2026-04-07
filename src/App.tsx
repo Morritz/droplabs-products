@@ -15,6 +15,23 @@ function AppContent() {
   const theme = createTheme({
     palette: {
       mode: darkMode ? "dark" : "light",
+      primary: {
+        main: darkMode ? "#ffffff" : "#000000",
+      },
+      secondary: {
+        main: darkMode ? "#000000" : "#ffffff",
+      },
+      background: {
+        default: darkMode ? "#000000" : "#ffffff",
+        paper: darkMode ? "#121212" : "#ffffff",
+      },
+      text: {
+        primary: darkMode ? "#ffffff" : "#000000",
+        secondary: darkMode ? "#aaaaaa" : "#666666",
+      },
+    },
+    typography: {
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
     },
   });
 
