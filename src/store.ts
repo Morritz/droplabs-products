@@ -4,6 +4,21 @@ import type { Product } from "./api";
 
 export type CartItem = Product & { quantity: number };
 
+type ThemeState = {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+};
+
+export const useTheme = create<ThemeState>()(
+  persist(
+    (set) => ({
+      darkMode: false,
+      toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
+    }),
+    { name: "theme-storage" },
+  ),
+);
+
 type CartState = {
   count: number;
   cart: CartItem[];

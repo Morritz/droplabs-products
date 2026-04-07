@@ -1,8 +1,13 @@
-import { AppBar as AppBarMUI, Toolbar, Box } from "@mui/material";
+import { AppBar as AppBarMUI, Toolbar, Box, IconButton } from "@mui/material";
+import { LightMode, DarkMode } from "@mui/icons-material";
 import { AppBarButton } from "./AppBarButton";
 import { CartButton } from "./CartButton";
+import { useTheme } from "../store";
 
 export function AppBar() {
+  const darkMode = useTheme((state) => state.darkMode);
+  const toggleDarkMode = useTheme((state) => state.toggleDarkMode);
+
   return (
     <AppBarMUI position="sticky">
       <Toolbar>
@@ -17,6 +22,9 @@ export function AppBar() {
             <AppBarButton title="Produkty" path="/products" />
           </Box>
           <Box>
+            <IconButton color="inherit" onClick={toggleDarkMode}>
+              {darkMode ? <LightMode /> : <DarkMode />}
+            </IconButton>
             <CartButton />
           </Box>
         </Box>
