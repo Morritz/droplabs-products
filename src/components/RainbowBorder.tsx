@@ -22,13 +22,13 @@ export function RainbowBorder({ children }: RainbowBorderProps) {
         padding: "4px",
         background: `linear-gradient(
           90deg,
-          #ff6b6b,
-          #feca57,
-          #48dbfb,
-          #ff9ff3,
-          #54a0ff,
-          #5f27cd,
-          #ff6b6b
+          #000000,
+          #ffffff,
+          #000000,
+          #ffffff,
+          #000000,
+          #ffffff,
+          #000000
         )`,
         backgroundSize: "200% 200%",
         animation: `${rainbowMove} 3s linear infinite`,
