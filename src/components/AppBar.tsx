@@ -12,7 +12,13 @@ import {
   ListItemText,
   useMediaQuery,
 } from "@mui/material";
-import { LightMode, DarkMode, Menu } from "@mui/icons-material";
+import {
+  LightMode,
+  DarkMode,
+  Menu,
+  Home,
+  Inventory,
+} from "@mui/icons-material";
 import { useState } from "react";
 import { AppBarButton } from "./AppBarButton";
 import { CartButton } from "./CartButton";
@@ -36,6 +42,7 @@ export function AppBar() {
       <List>
         <ListItem disablePadding>
           <ListItemButton component={Link} to="/" sx={{ textAlign: "center" }}>
+            <Home sx={{ mr: 1 }} />
             <ListItemText primary={t("home")} />
           </ListItemButton>
         </ListItem>
@@ -45,6 +52,7 @@ export function AppBar() {
             to="/products"
             sx={{ textAlign: "center" }}
           >
+            <Inventory sx={{ mr: 1 }} />
             <ListItemText primary={t("products")} />
           </ListItemButton>
         </ListItem>
