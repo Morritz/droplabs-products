@@ -38,8 +38,9 @@ export function ProductCardBase({
       <Box
         sx={{
           position: "relative",
-          width: 200,
-          height: 200,
+          width: "30%",
+          minWidth: 150,
+          aspectRatio: "1",
           overflow: "hidden",
           "&:hover .zoom-icon": {
             opacity: 1,
