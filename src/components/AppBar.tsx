@@ -3,7 +3,8 @@ import {
   Toolbar,
   Box,
   IconButton,
-  Button,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import { LightMode, DarkMode } from "@mui/icons-material";
 import { AppBarButton } from "./AppBarButton";
@@ -15,10 +16,6 @@ export function AppBar() {
   const darkMode = useTheme((state) => state.darkMode);
   const toggleDarkMode = useTheme((state) => state.toggleDarkMode);
   const { language, setLanguage, t } = useLanguage();
-
-  const toggleLanguage = () => {
-    setLanguage(language === "pl" ? "en" : "pl");
-  };
 
   return (
     <AppBarMUI position="sticky">
@@ -34,9 +31,14 @@ export function AppBar() {
             <AppBarButton title={t("products")} path="/products" />
           </Box>
           <Box>
-            <Button color="inherit" onClick={toggleLanguage} sx={{ mr: 1 }}>
-              {language.toUpperCase()}
-            </Button>
+            <Select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as "pl" | "en")}
+              sx={{ color: "inherit", mr: 1 }}
+            >
+              <MenuItem value="pl">PL</MenuItem>
+              <MenuItem value="en">EN</MenuItem>
+            </Select>
             <IconButton color="inherit" onClick={toggleDarkMode}>
               {darkMode ? <LightMode /> : <DarkMode />}
             </IconButton>

@@ -16,6 +16,7 @@ export const translations = {
     removeFromCart: "Usuń z koszyka",
     quantity: "Ilość",
     category: "Kategoria",
+    identifier: "ID",
   },
   en: {
     home: "Home",
@@ -34,6 +35,7 @@ export const translations = {
     removeFromCart: "Remove from cart",
     quantity: "Quantity",
     category: "Category",
+    identifier: "ID",
   },
 } as const;
 
