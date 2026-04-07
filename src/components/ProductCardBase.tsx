@@ -35,20 +35,54 @@ export function ProductCardBase({
         alignItems: { xs: "center", sm: "normal" },
       }}
     >
-      <CardMedia
-        component="img"
-        alt={product.title}
-        sx={{
-          width: 200,
-          height: 200,
-          objectFit: "contain",
-          aspectRatio: "1 / 1",
-          p: 2,
-          cursor: "pointer",
-        }}
-        image={product.image}
-        onClick={() => setOpen(true)}
-      />
+      <Box sx={{ position: "relative", width: 200, height: 200 }}>
+        <CardMedia
+          component="img"
+          alt={product.title}
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            p: 2,
+            cursor: "pointer",
+            transition: "transform 0.2s ease",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+          image={product.image}
+          onClick={() => setOpen(true)}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            pointerEvents: "none",
+            opacity: 0,
+            transition: "opacity 0.2s ease",
+            "&:hover": {
+              opacity: 1,
+            },
+          }}
+        >
+          <Box
+            sx={{
+              bgcolor: "rgba(0,0,0,0.5)",
+              borderRadius: "50%",
+              p: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+          </Box>
+        </Box>
+      </Box>
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography gutterBottom variant="h5" component="div">
           {product.title}
