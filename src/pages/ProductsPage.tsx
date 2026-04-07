@@ -2,6 +2,7 @@ import { Container, Box, ButtonGroup, Button } from "@mui/material";
 import { ProductCard } from "../components/ProductCard";
 import { useGetAllProductsQuery } from "../hooks/useGetAllProductsQuery";
 import { ProductsLoadingError } from "../components/ProductsLoadingError";
+import { ProductsEmptyList } from "../components/ProductsEmptyList";
 import { CircularLoadingProgress } from "../components/CircularLoadingProgress";
 import { useSortProducts } from "../hooks/useSortProducts";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
@@ -18,13 +19,7 @@ export function ProductsPage() {
   if (error || !data) return <ProductsLoadingError />;
 
   if (sortedProducts.length === 0) {
-    return (
-      <Container>
-        <Box p={4}>
-          <p>Brak produktów</p>
-        </Box>
-      </Container>
-    );
+    return <ProductsEmptyList />;
   }
 
   return (
