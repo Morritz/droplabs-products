@@ -6,6 +6,7 @@ import { ProductCard } from "../components/ProductCard";
 import { Box, Container, Typography } from "@mui/material";
 import { getRandomFromArray } from "../utils/getRandomFromArray";
 import { useLanguage } from "../i18n";
+import { RainbowBorder } from "../components/RainbowBorder";
 
 export function HomePage() {
   const { data, isLoading, error } = useGetAllProductsQuery();
@@ -29,7 +30,11 @@ export function HomePage() {
         </Typography>
       </Box>
       <Box p={4} gap={4} display={"flex"} flexDirection={"column"}>
-        {randomProduct && <ProductCard product={randomProduct} />}
+        {randomProduct && (
+          <RainbowBorder>
+            <ProductCard product={randomProduct} />
+          </RainbowBorder>
+        )}
       </Box>
     </Container>
   );
