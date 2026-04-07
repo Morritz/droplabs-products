@@ -38,8 +38,9 @@ export function ProductCardBase({
       <Box
         sx={{
           position: "relative",
-          width: "30%",
-          minWidth: 150,
+          flexShrink: 0,
+          flexBasis: { xs: "100%", sm: "25%" },
+          minWidth: { xs: "100%", sm: 150 },
           aspectRatio: "1",
           overflow: "hidden",
           "&:hover .zoom-icon": {
