@@ -35,15 +35,24 @@ export function ProductCardBase({
         alignItems: { xs: "center", sm: "normal" },
       }}
     >
-      <Box sx={{ position: "relative", width: 200, height: 200 }}>
+      <Box
+        sx={{
+          position: "relative",
+          width: 200,
+          height: 200,
+          overflow: "hidden",
+          "&:hover .zoom-icon": {
+            opacity: 1,
+          },
+        }}
+      >
         <CardMedia
           component="img"
           alt={product.title}
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "contain",
-            p: 2,
+            objectFit: "cover",
             cursor: "pointer",
             transition: "transform 0.2s ease",
             "&:hover": {
@@ -54,6 +63,7 @@ export function ProductCardBase({
           onClick={() => setOpen(true)}
         />
         <Box
+          className="zoom-icon"
           sx={{
             position: "absolute",
             top: "50%",
@@ -62,9 +72,6 @@ export function ProductCardBase({
             pointerEvents: "none",
             opacity: 0,
             transition: "opacity 0.2s ease",
-            "&:hover": {
-              opacity: 1,
-            },
           }}
         >
           <Box
