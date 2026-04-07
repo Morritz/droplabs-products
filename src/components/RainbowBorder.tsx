@@ -1,0 +1,48 @@
+import { Box, keyframes } from "@mui/material";
+
+const rainbowMove = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+`;
+
+interface RainbowBorderProps {
+  children: React.ReactNode;
+}
+
+export function RainbowBorder({ children }: RainbowBorderProps) {
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        borderRadius: "12px",
+        padding: "4px",
+        background: `linear-gradient(
+          90deg,
+          #ff6b6b,
+          #feca57,
+          #48dbfb,
+          #ff9ff3,
+          #54a0ff,
+          #5f27cd,
+          #ff6b6b
+        )`,
+        backgroundSize: "200% 200%",
+        animation: `${rainbowMove} 3s linear infinite`,
+      }}
+    >
+      <Box
+        sx={{
+          borderRadius: "8px",
+          overflow: "hidden",
+          bgcolor: "background.paper",
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  );
+}
