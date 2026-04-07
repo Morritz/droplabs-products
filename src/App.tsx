@@ -4,14 +4,22 @@ import { ProductsPage } from "./pages/ProductsPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { AppBar } from "./components/AppBar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { CartPage } from "./pages/CartPage";
+import { useTheme } from "./store";
 
 const queryClient = new QueryClient();
 
-function App() {
+function AppContent() {
+  const darkMode = useTheme((state) => state.darkMode);
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? "dark" : "light",
+    },
+  });
+
   return (
-    <QueryClientProvider client={queryClient}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
         <AppBar />
@@ -22,6 +30,14 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
+    </ThemeProvider>
+  );
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AppContent />
     </QueryClientProvider>
   );
 }
