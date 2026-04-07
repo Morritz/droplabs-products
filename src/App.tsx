@@ -30,6 +30,9 @@ function AppContent() {
         secondary: darkMode ? "#aaaaaa" : "#666666",
       },
     },
+    typography: {
+      fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
+    },
   });
 
   return (
