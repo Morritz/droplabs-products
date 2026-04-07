@@ -32,16 +32,16 @@ export function ProductCardBase({
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
         width: "100%",
-        alignItems: { xs: "center", sm: "normal" },
+        minHeight: { sm: 220 },
+        alignItems: "stretch",
       }}
     >
       <Box
         sx={{
           position: "relative",
           flexShrink: 0,
-          flexBasis: { xs: "100%", sm: "25%" },
-          minWidth: { xs: "100%", sm: 150 },
-          aspectRatio: "1",
+          width: { xs: "100%", sm: 220 },
+          height: { sm: 220 },
           overflow: "hidden",
           "&:hover .zoom-icon": {
             opacity: 1,
