@@ -17,6 +17,16 @@ export function ProductsPage() {
 
   if (error || !data) return <ProductsLoadingError />;
 
+  if (sortedProducts.length === 0) {
+    return (
+      <Container>
+        <Box p={4}>
+          <p>Brak produktów</p>
+        </Box>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <Box p={4}>
