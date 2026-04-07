@@ -132,7 +132,7 @@ export function ProductCardBase({
             style={{
               maxWidth: "100%",
               maxHeight: "80vh",
-              objectFit: "contain",
+              objectFit: "cover",
             }}
           />
         </Box>
