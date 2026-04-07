@@ -8,6 +8,7 @@ import {
   Rating,
 } from "@mui/material";
 import type { Product } from "../api";
+import { useLanguage } from "../i18n";
 
 interface ProductCardBaseProps {
   product: Product;
@@ -18,6 +19,7 @@ export function ProductCardBase({
   product,
   cardActions,
 }: ProductCardBaseProps) {
+  const { t } = useLanguage();
   return (
     <Card
       sx={{
@@ -48,7 +50,7 @@ export function ProductCardBase({
         </Typography>
         <Box sx={{ display: "flex", gap: 2, mb: 1, alignItems: "center" }}>
           <Typography variant="body2">
-            <strong>Kategoria:</strong> {product.category}
+            <strong>{t("category")}:</strong> {product.category}
           </Typography>
           <Rating value={product.rating.rate} readOnly size="small" />
           <Typography variant="body2">({product.rating.count})</Typography>

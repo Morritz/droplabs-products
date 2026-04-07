@@ -3,6 +3,7 @@ import type { Product } from "../api";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useCart } from "../store";
 import { ProductCardBase } from "./ProductCardBase";
+import { useLanguage } from "../i18n";
 
 interface ProductCardProps {
   product: Product;
@@ -10,6 +11,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const addCart = useCart((state) => state.addCart);
+  const { t } = useLanguage();
   return (
     <ProductCardBase
       product={product}
@@ -23,6 +25,7 @@ export function ProductCard({ product }: ProductCardProps) {
           }
         >
           <AddShoppingCartIcon />
+          {t("addToCart")}
         </Button>
       }
     />
