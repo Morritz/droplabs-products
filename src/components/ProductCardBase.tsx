@@ -41,8 +41,11 @@ export function ProductCardBase({
           position: "relative",
           flexShrink: 0,
           width: { xs: "100%", sm: 220 },
-          height: { sm: 220 },
+          minHeight: { sm: 220 },
           overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           "&:hover .zoom-icon": {
             opacity: 1,
           },
@@ -53,8 +56,8 @@ export function ProductCardBase({
           alt={product.title}
           sx={{
             width: "100%",
-            height: "100%",
-            objectFit: "cover",
+            height: "auto",
+            objectFit: "contain",
             cursor: "pointer",
             transition: "transform 0.2s ease",
             "&:hover": {
