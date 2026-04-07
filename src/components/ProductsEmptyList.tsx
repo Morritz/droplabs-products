@@ -1,6 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
+import { useLanguage } from "../i18n";
 
 export function ProductsEmptyList() {
+  const { t } = useLanguage();
   return (
     <Container maxWidth="sm">
       <Box
@@ -13,10 +15,10 @@ export function ProductsEmptyList() {
         gap={2}
       >
         <Typography variant="h4" component="h2" gutterBottom>
-          Brak produktów
+          {t("noProducts")}
         </Typography>
         <Typography variant="body1" color="text.secondary" mb={2}>
-          Nie znaleziono produktów do wyświetlenia.
+          {t("noProductsFound")}
         </Typography>
       </Box>
     </Container>

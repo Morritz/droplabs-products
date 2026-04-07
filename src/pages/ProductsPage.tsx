@@ -5,11 +5,13 @@ import { ProductsLoadingError } from "../components/ProductsLoadingError";
 import { ProductsEmptyList } from "../components/ProductsEmptyList";
 import { CircularLoadingProgress } from "../components/CircularLoadingProgress";
 import { useSortProducts } from "../hooks/useSortProducts";
+import { useLanguage } from "../i18n";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export function ProductsPage() {
   const { data, isLoading, error } = useGetAllProductsQuery();
+  const { t } = useLanguage();
 
   const { sortedProducts, sortField, sortOrder, sortBy } =
     useSortProducts(data);
@@ -30,7 +32,7 @@ export function ProductsPage() {
             onClick={() => sortBy("default")}
             color={sortField === "default" ? "primary" : "inherit"}
           >
-            Domyślnie
+            {t("default")}
           </Button>
           <Button
             onClick={() => sortBy("title")}
@@ -44,7 +46,7 @@ export function ProductsPage() {
               ))
             }
           >
-            Tytuł
+            {t("title")}
           </Button>
           <Button
             onClick={() => sortBy("price")}
@@ -58,7 +60,7 @@ export function ProductsPage() {
               ))
             }
           >
-            Cena
+            {t("price")}
           </Button>
         </ButtonGroup>
       </Box>

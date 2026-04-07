@@ -5,9 +5,11 @@ import { useGetAllProductsQuery } from "../hooks/useGetAllProductsQuery";
 import { ProductCard } from "../components/ProductCard";
 import { Box, Container, Typography } from "@mui/material";
 import { getRandomFromArray } from "../utils/getRandomFromArray";
+import { useLanguage } from "../i18n";
 
 export function HomePage() {
   const { data, isLoading, error } = useGetAllProductsQuery();
+  const { t } = useLanguage();
 
   const randomProduct = useMemo(() => {
     if (data && data.length > 0) {
@@ -23,7 +25,7 @@ export function HomePage() {
     <Container>
       <Box p={4} display={"flex"} width={"100%"} justifyContent={"center"}>
         <Typography variant="h4" component="h2" gutterBottom>
-          Losowy produkt
+          {t("randomProduct")}
         </Typography>
       </Box>
       <Box p={4} gap={4} display={"flex"} flexDirection={"column"}>

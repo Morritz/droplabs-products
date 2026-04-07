@@ -1,0 +1,41 @@
+export const translations = {
+  pl: {
+    home: "Strona główna",
+    products: "Produkty",
+    cart: "Koszyk",
+    randomProduct: "Losowy produkt",
+    default: "Domyślnie",
+    title: "Tytuł",
+    price: "Cena",
+    emptyCart: "Koszyk jest pusty",
+    noProducts: "Brak produktów",
+    noProductsFound: "Nie znaleziono produktów do wyświetlenia.",
+    error: "Błąd",
+    failedToLoadProducts: "Nie udało się pobrać produktów.",
+    addToCart: "Dodaj do koszyka",
+    removeFromCart: "Usuń z koszyka",
+    quantity: "Ilość",
+    category: "Kategoria",
+  },
+  en: {
+    home: "Home",
+    products: "Products",
+    cart: "Cart",
+    randomProduct: "Random Product",
+    default: "Default",
+    title: "Title",
+    price: "Price",
+    emptyCart: "Cart is empty",
+    noProducts: "No Products",
+    noProductsFound: "No products found to display.",
+    error: "Error",
+    failedToLoadProducts: "Failed to load products.",
+    addToCart: "Add to cart",
+    removeFromCart: "Remove from cart",
+    quantity: "Quantity",
+    category: "Category",
+  },
+} as const;
+
+export type Language = keyof typeof translations;
+export type TranslationKey = keyof (typeof translations)["pl"];

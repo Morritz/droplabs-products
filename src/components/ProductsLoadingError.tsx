@@ -1,6 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
+import { useLanguage } from "../i18n";
 
 export function ProductsLoadingError() {
+  const { t } = useLanguage();
   return (
     <Container maxWidth="sm">
       <Box
@@ -13,10 +15,10 @@ export function ProductsLoadingError() {
         gap={2}
       >
         <Typography variant="h4" component="h2" gutterBottom>
-          Błąd
+          {t("error")}
         </Typography>
         <Typography variant="body1" color="text.secondary" mb={2}>
-          Nie udało się pobrać produktów.
+          {t("failedToLoadProducts")}
         </Typography>
       </Box>
     </Container>
