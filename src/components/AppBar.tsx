@@ -36,8 +36,8 @@ export function AppBar() {
               onChange={(e) => setLanguage(e.target.value as "pl" | "en")}
               sx={{ color: "inherit", mr: 1 }}
             >
-              <MenuItem value="pl">PL</MenuItem>
-              <MenuItem value="en">EN</MenuItem>
+              <MenuItem value="pl">🇵🇱 PL</MenuItem>
+              <MenuItem value="en">🇬🇧 EN</MenuItem>
             </Select>
             <IconButton color="inherit" onClick={toggleDarkMode}>
               {darkMode ? <LightMode /> : <DarkMode />}

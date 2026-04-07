@@ -61,12 +61,6 @@ export function ProductCardBase({
         >
           ${product.price}
         </Typography>
-        <Typography
-          variant="caption"
-          sx={{ color: "text.secondary", mt: 1, display: "block" }}
-        >
-          {t("identifier")}: {product.id}
-        </Typography>
       </CardContent>
       <CardActions>{cardActions}</CardActions>
     </Card>
