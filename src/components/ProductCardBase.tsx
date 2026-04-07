@@ -6,9 +6,13 @@ import {
   Typography,
   Box,
   Rating,
+  Modal,
+  IconButton,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import type { Product } from "../api";
 import { useLanguage } from "../i18n";
+import { useState } from "react";
 
 interface ProductCardBaseProps {
   product: Product;
@@ -20,6 +24,8 @@ export function ProductCardBase({
   cardActions,
 }: ProductCardBaseProps) {
   const { t } = useLanguage();
+  const [open, setOpen] = useState(false);
+
   return (
     <Card
       sx={{
@@ -38,8 +44,10 @@ export function ProductCardBase({
           objectFit: "contain",
           aspectRatio: "1 / 1",
           p: 2,
+          cursor: "pointer",
         }}
         image={product.image}
+        onClick={() => setOpen(true)}
       />
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography gutterBottom variant="h5" component="div">
@@ -63,6 +71,38 @@ export function ProductCardBase({
         </Typography>
       </CardContent>
       <CardActions>{cardActions}</CardActions>
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 2,
+            borderRadius: 1,
+            maxWidth: "90vw",
+            maxHeight: "90vh",
+          }}
+        >
+          <IconButton
+            onClick={() => setOpen(false)}
+            sx={{ position: "absolute", top: 8, right: 8 }}
+          >
+            <CloseIcon />
+          </IconButton>
+          <img
+            src={product.image}
+            alt={product.title}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "80vh",
+              objectFit: "contain",
+            }}
+          />
+        </Box>
+      </Modal>
     </Card>
   );
 }
